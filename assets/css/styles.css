@@ -44,6 +44,7 @@
 @media screen and (min-width: 968px){
   :root{
     --biggest-font-size: 3rem;
+    --title-line-height: 55px;
     --h2-font-size: 1.75rem;
     --h3-font-size: 1.25rem;
     --normal-font-size: 1rem;
@@ -296,7 +297,7 @@ img{
   font-size: var(--biggest-font-size);
   font-weight: var(--font-bold);
   margin-bottom: var(--mb-2);
-  line-height: 55px;
+  line-height: var(--title-line-height);
 }
 
 .home__description{
@@ -547,6 +548,13 @@ img{
   .share__img,
   .send__img{
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 576px){
+  :root {
+    --biggest-font-size: 1.25rem;
+    --title-line-height: 30px;
   }
 }
 
