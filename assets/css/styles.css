@@ -358,6 +358,14 @@ img{
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
+.decoration__container{
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.decoration__container__wide{
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
 .decoration__data{
   text-align: center;
   padding: 1rem 1rem 2rem;
@@ -379,6 +387,10 @@ img{
   border-radius: 15px;
 }
 
+.decoration__img__wide {
+  width: 220px;
+  height: 100px;
+}
 
 .decoration__title{
   font-size: var(--h3-font-size);
