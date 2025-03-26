@@ -15,7 +15,6 @@
   --text-color-light: #8F8A8A;
   --body-color: #FEFBFB;
   --container-color: #FFF;
-  --background-image: url('light_background.png');
 
   /*========== Font and typography ==========*/
   --body-font: 'Roboto', sans-serif; /* Changed font */
@@ -68,7 +67,6 @@ body.dark-theme{
   --text-color: #D1C7C8;
   --body-color: #251D1E;
   --container-color: #302728;
-  --background-image: url('dark_background.png');
 }
 
 /*========== Button Dark/Light ==========*/
@@ -86,7 +84,11 @@ body{
   margin: var(--header-height) 0 0 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
-  background-color: var(--body-color);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+  background-image: url('ethnic-frame-illustration-with-tribal-pattern.jpg');
   color: var(--text-color);
   line-height: 1.6;
 }
@@ -129,6 +131,9 @@ img{
 /*========== LAYOUT ==========*/
 .l-main{
   overflow: hidden;
+  margin: 0 auto;
+  background-color: var(--body-color);
+  max-width: 72vw;
 }
 
 .bd-container{
@@ -273,7 +278,6 @@ img{
 
 /*========== HOME ==========*/
 .home__background{
-  background-image: var(--background-image);
   background-size: cover;
   background-position: center;
   padding: 20px 20px 60px 20px;
@@ -282,8 +286,6 @@ img{
 .home__container {
   row-gap: .5rem;
 }
-
-
 
 .home__img{
   width: 280px;
@@ -518,6 +520,11 @@ img{
   font-size: var(--small-font-size);
   color: var(--text-color-light);
   margin: 15px;
+}
+
+.footer {
+  background-color: var(--body-color);
+  padding: 0.2rem 1.5rem;
 }
 
 /*========== MEDIA QUERIES ==========*/
