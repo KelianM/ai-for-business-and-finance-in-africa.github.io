@@ -147,7 +147,7 @@ img{
 
 .bd-grid{
   display: grid;
-  gap: 1.5rem;
+  gap: var(--mb-3); /* Gap between items is same as left & right margin (mb-3) for consistency*/
 }
 
 .l-header{
@@ -622,15 +622,15 @@ th:nth-child(1), td:nth-child(1) {
   }
 
   .bd-container {
-    width: calc(100% - 1rem);
+    width: calc(100% - 1.5rem);
   }
 
   .decoration__container{
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
   }
 
   .decoration__data{
-    padding: 1rem 0.5rem 2rem;
+    padding: 1rem 0.5rem 1rem;
   }
 
   .decoration__img {
