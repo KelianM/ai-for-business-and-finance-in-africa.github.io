@@ -23,6 +23,7 @@
   --h3-font-size: 1.125rem;
   --normal-font-size: .938rem;
   --small-font-size: .813rem;
+  --decoration-font-size: 1.125rem
 
   /*========== Font weight ==========*/
   --font-semi-bold: 600;
@@ -329,7 +330,7 @@ img{
 }
 
 .button-link{
-  font-size: 15px;
+  font-size: var(--h3-font-size);
   background: none;
   padding: 0;
   color: var(--first-color);
@@ -386,7 +387,7 @@ img{
 }
 
 .decoration__title{
-  font-size: var(--h3-font-size);
+  font-size: var(--decoration-font-size);
   margin-bottom: var(--mb-1);
 }
 
@@ -535,6 +536,56 @@ img{
   margin: 0 auto;
 }
 
+#more-text {
+  display: none;
+}
+
+#readMoreBtn {
+  color: var(--first-color);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: separate; /* Changed from collapse to separate */
+  border-spacing: 0; /* Ensures no gaps between cells */
+  margin: 20px 0;
+  background-color: var(--container-color);
+  box-shadow: 0 2px 6px rgba(65, 11, 16, .15);
+  border-radius: 1rem;
+  overflow: hidden; /* Ensures the border-radius affects the content */
+  table-layout: fixed; /* Ensure the column widths are respected */
+}
+
+th, td {
+  border: 1px solid #dddddd00;
+  padding: 8px;
+  text-align: left;
+  overflow: hidden; /* Prevents content from overflowing */
+  text-overflow: ellipsis; /* Adds ellipsis (...) for overflow text */
+}
+
+th {
+  color: white;
+  background-color: var(--first-color-send);
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.056);
+}
+
+tr:nth-child(odd) {
+  background-color: var(--body-color);
+}
+
+/* Specifically target the time column */
+th:nth-child(1), td:nth-child(1) {
+  width: 200px; /* Adjust the width as needed */
+}
+
 /*========== MEDIA QUERIES ==========*/
 
 /* For full-screen images on small screens */
@@ -550,19 +601,22 @@ img{
   }
 }
 
-@media screen and (max-width: 602px){
+@media screen and (max-width: 768px){
   :root {
     --biggest-font-size: 1.25rem;
     --h2-font-size: 1.125rem;
     --h3-font-size: 1rem;
+    --decoration-font-size: .938rem;
     --title-line-height: 30px;
-    --mb-3: .5rem;
+    --mb-1: .25rem;
+    --mb-2: .5rem;
+    --mb-3: .75rem;
+    --mb-4: 1rem;
+    --mb-5: 1.25rem;
+    --mb-6: 1.5rem;
   }
 
-  .l-main {
-    max-width: 90vw;
-  }
-
+  .l-main,
   .footer {
     max-width: 90vw;
   }
@@ -588,47 +642,22 @@ img{
     width: 128px;
     height: 64px;
   }
-}
-
-@media screen and and (max-width: 576px){
-  .l-main {
-    max-width: 90vw;
-  }
-
-  .footer {
-    max-width: 90vw;
-  }
 
   .section{
     padding-top: 0rem;
   }
-}
 
-@media screen and (min-width: 576px) and (max-width: 767px){
-  .l-main {
-    max-width: 85vw;
-  }
-
-  .footer {
-    max-width: 85vw;
-  }
-
-  .section{
-    padding-top: 0rem;
+  th:nth-child(1), td:nth-child(1) {
+    width: 68px; /* Adjust the width as needed */
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px){
-  .l-main {
-    max-width: 80vw;
-  }
-
+@media screen and (min-width: 768px){
+  .l-main,
   .footer {
     max-width: 80vw;
   }
-}
 
-@media screen and (min-width: 576px){
   .share__container,
   .send__container{
     grid-template-columns: repeat(2,1fr);
@@ -660,12 +689,17 @@ img{
 }
 
 @media screen and (min-width: 1024px){
+  .l-main,
+  .footer {
+    max-width: 72vw;
+  }
+
   body{
     margin: 0;
   }
 
   .section{
-    padding-top: 7rem;
+    padding-top: 5rem;
   }
 
   .nav{
@@ -748,62 +782,5 @@ img{
   .share__container,
   .send__container{
     column-gap: 5rem;
-  }
-}
-
-
-#more-text {
-  display: none;
-}
-
-#readMoreBtn {
-  color: var(--first-color);
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-
-table {
-  width: 100%;
-  border-collapse: separate; /* Changed from collapse to separate */
-  border-spacing: 0; /* Ensures no gaps between cells */
-  margin: 20px 0;
-  background-color: var(--container-color);
-  box-shadow: 0 2px 6px rgba(65, 11, 16, .15);
-  border-radius: 1rem;
-  overflow: hidden; /* Ensures the border-radius affects the content */
-  table-layout: fixed; /* Ensure the column widths are respected */
-}
-
-th, td {
-  border: 1px solid #dddddd00;
-  padding: 8px;
-  text-align: left;
-  overflow: hidden; /* Prevents content from overflowing */
-  text-overflow: ellipsis; /* Adds ellipsis (...) for overflow text */
-}
-
-th {
-  color: white;
-  background-color: var(--first-color-send);
-  font-weight: bold;
-}
-
-tr:nth-child(even) {
-  background-color: rgba(0, 0, 0, 0.056);
-}
-
-tr:nth-child(odd) {
-  background-color: var(--body-color);
-}
-
-/* Specifically target the time column */
-th:nth-child(1), td:nth-child(1) {
-  width: 200px; /* Adjust the width as needed */
-}
-
-@media screen and (max-width: 768px) {
-  th:nth-child(1), td:nth-child(1) {
-    width: 68px; /* Adjust the width as needed */
   }
 }
