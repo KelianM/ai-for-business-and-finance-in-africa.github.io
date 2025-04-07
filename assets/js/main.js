@@ -79,6 +79,33 @@ if (selectedTheme) {
   themeButton.classList[selectedIcon === 'bx-toggle-left' ? 'add' : 'remove'](iconTheme)
 }
 
+/*==================== AUTO SELECT THEME ====================*/
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+// Apply the preferred theme on page load if no theme is saved
+if (!selectedTheme) {
+    if (prefersDarkScheme.matches) {
+        document.body.classList.add(darkTheme);
+        themeButton.classList.add(iconTheme);
+    } else {
+        document.body.classList.remove(darkTheme);
+        themeButton.classList.remove(iconTheme);
+    }
+}
+
+// Listen for changes in the system's color scheme
+prefersDarkScheme.addEventListener("change", (e) => {
+    if (!selectedTheme) { // Only auto-apply if no manual selection exists
+        if (e.matches) {
+            document.body.classList.add(darkTheme);
+            themeButton.classList.add(iconTheme);
+        } else {
+            document.body.classList.remove(darkTheme);
+            themeButton.classList.remove(iconTheme);
+        }
+    }
+});
+
 // Activate / deactivate the theme manually with the button
 themeButton.addEventListener('click', () => {
     // Add or remove the dark / icon theme
